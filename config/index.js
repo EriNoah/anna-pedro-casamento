@@ -28,7 +28,7 @@ module.exports = (app) => {
     })
   );
   const path = require("path");
-  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
   // In development environment the app logs
   app.use(logger("dev"));
@@ -40,6 +40,6 @@ module.exports = (app) => {
 
   app.use((req, res) => {
     // If no routes match, send them the React HTML.
-    res.sendFile(__dirname + "/client/build/index.html");
+    res.sendFile(__dirname + "../client/build/index.html");
   });
 };
