@@ -11,6 +11,11 @@ html {
   font-family: "Nanum Myeongjo", serif;
 }
 
+/* .sizes {
+  width: 600px;
+  height: 250px;
+} */
+
 .expired-notice {
   text-align: center;
   padding: 2rem;

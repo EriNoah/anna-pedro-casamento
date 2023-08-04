@@ -6,29 +6,33 @@ import foto3 from "../assets/nossa_historia_3.jpg";
 function Historia() {
   return (
     <>
-      <div className="div text-[#636566]">
-        <p className="flex p gap-5">
-          Nos conhecemos nos primeiros dias de aula do curso de Filosofia e
-          poucos dias depois já estávamos dividindo os detalhes de nossas vidas,
-          aos pouquinhos, começamos a nos integrar às famílias um do outro e a
-          dividir também as histórias, até parecer que sempre estivemos ali.
-          Acreditamos nisso, que nosso laço sempre existiu e que nosso encontro
-          se estende de outras vivências para além do que já vivemos nesse plano
-          e do que podemos imaginar viver daqui pra frente. Aquele amor que nos
-          incendiou, há seis anos atrás, hoje resulta em nosso casamento.
+      <div className="div flex flex-col justify-center md:flex md:flex-col min-[]:md:justify-center md:items-center max-w-screen-xl text-[#636566">
+        <div className="flex-col justify-center p gap-5 md:flex md:flex-row md:justify-center md:items-center md:w-[800px]">
+          <div className="text-sm mb-3 md:text-base">
+            Nos conhecemos nos primeiros dias de aula do curso de Filosofia e
+            poucos dias depois já estávamos dividindo os detalhes de nossas
+            vidas, aos pouquinhos, começamos a nos integrar às famílias um do
+            outro e a dividir também as histórias, até parecer que sempre
+            estivemos ali. Acreditamos nisso, que nosso laço sempre existiu e
+            que nosso encontro se estende de outras vivências para além do que
+            já vivemos nesse plano e do que podemos imaginar viver daqui pra
+            frente. Aquele amor que nos incendiou, há seis anos atrás, hoje
+            resulta em nosso casamento.
+          </div>
           <img
             className="max-h-[250px] drop-shadow-2xl rounded-lg"
             src={foto1}
             alt="foto1"
           />
-        </p>
-        <p className="flex gap-5 justify-center p ">
+        </div>
+
+        <div className="flex-col justify-center p gap-5 md:flex md:flex-row md:justify-center md:items-center md:w-[800px]">
           <img
             className="max-w-[200px] drop-shadow-2xl rounded-lg"
             src={foto2}
             alt="foto2"
           />
-          <div className="self-center">
+          <div className="self-center text-sm md:text-base my-3">
             Vivemos bons momentos, outros nem tão bons assim, viajamos,
             trabalhamos, estudamos, planejamos, mudamos e aproveitamos muito
             cada segundo juntos. Já nos afastamos e nos reencontramos, ainda
@@ -45,10 +49,10 @@ function Historia() {
             por nós e que participam diretamente do nosso crescimento, sem elas
             esse momento não seria possível.
           </div>
-        </p>
+        </div>
 
-        <p className="flex gap-5 justify-center p">
-          <div className="self-center text-xl tracking-wider">
+        <div className="flex-col p gap-5 md:flex md:flex-row md:justify-center md:items-center md:w-[800px]">
+          <div className="text-sm mb-3 md:text-2xl">
             Estamos extremamente felizes e emocionados por dividir esse momento
             com vocês, obrigado por ter chegado até aqui com a gente!
           </div>
@@ -57,7 +61,7 @@ function Historia() {
             src={foto3}
             alt="foto3"
           />
-        </p>
+        </div>
       </div>
     </>
   );
