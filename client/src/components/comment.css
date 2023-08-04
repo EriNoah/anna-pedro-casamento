@@ -41,7 +41,7 @@ small {
   position: relative;
   z-index: 20;
 }
-&:before small{
+:before small{
   content: "\2014 \0020";
   width: 5px;
 }

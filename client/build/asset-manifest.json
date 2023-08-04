@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab59a406.css",
-    "main.js": "/static/js/main.5c3a1263.js",
+    "main.css": "/static/css/main.5d071c92.css",
+    "main.js": "/static/js/main.9c4b8357.js",
+    "static/js/787.5649b3cb.chunk.js": "/static/js/787.5649b3cb.chunk.js",
     "static/media/foto_home.jpg": "/static/media/foto_home.c35ef206593454d34b49.jpg",
     "static/media/nossa_historia_1.jpg": "/static/media/nossa_historia_1.bff194aa5efe352839a1.jpg",
     "static/media/nossa_historia_2.jpg": "/static/media/nossa_historia_2.367020c9f8c25bd4814e.jpg",
@@ -87,11 +88,12 @@
     "static/media/house_13.png": "/static/media/house_13.5534e64d8af82d58e72f.png",
     "static/media/house_12.png": "/static/media/house_12.4ba3045324a951fd8909.png",
     "index.html": "/index.html",
-    "main.ab59a406.css.map": "/static/css/main.ab59a406.css.map",
-    "main.5c3a1263.js.map": "/static/js/main.5c3a1263.js.map"
+    "main.5d071c92.css.map": "/static/css/main.5d071c92.css.map",
+    "main.9c4b8357.js.map": "/static/js/main.9c4b8357.js.map",
+    "787.5649b3cb.chunk.js.map": "/static/js/787.5649b3cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab59a406.css",
-    "static/js/main.5c3a1263.js"
+    "static/css/main.5d071c92.css",
+    "static/js/main.9c4b8357.js"
   ]
 }
