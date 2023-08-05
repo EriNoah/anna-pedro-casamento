@@ -27,6 +27,8 @@ module.exports = (app) => {
       origin: [FRONTEND_URL],
     })
   );
+  const path = require("path");
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
   // In development environment the app logs
   app.use(logger("dev"));
