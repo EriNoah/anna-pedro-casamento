@@ -2,11 +2,11 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import OCasamento from "./pages/OCasamiento";
-import Historia from "./pages/Historia";
-import Home from "./pages/Home";
-import ListaDePresentes from "./pages/ListaDePresentes";
-import Mensagens from "./pages/Mensagens";
+import OCasamento from "./paginas/OCasamiento";
+import Historia from "./paginas/Historia";
+import Home from "./paginas/Home";
+import ListaDePresentes from "./paginas/ListaDePresentes";
+import Mensagens from "./paginas/Mensagens";
 
 function App() {
   return (
