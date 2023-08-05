@@ -37,9 +37,4 @@ module.exports = (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
-
-  app.use((req, res) => {
-    // If no routes match, send them the React HTML.
-    res.sendFile(__dirname + "../client/build/index.html");
-  });
 };
