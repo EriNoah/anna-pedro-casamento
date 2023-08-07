@@ -13,7 +13,7 @@ const cookieParser = require("cookie-parser");
 // unless the request if from the same domain, by default express wont accept POST requests
 const cors = require("cors");
 
-const FRONTEND_URL = "https://anna-pedro-d505b9d011fd.herokuapp.com";
+const FRONTEND_URL = "https://www.annaepedro.site";
 
 // Middleware configuration
 module.exports = (app) => {
