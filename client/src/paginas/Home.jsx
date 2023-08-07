@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="m-10 gap-5 ">
       <div className="flex flex-col justify-center items-center gap-10 mb-10">
-        <div className=" md:w-auto flex ">
+        <div className=" w-auto md:w-[800px] flex ">
           <img className="drop-shadow-2xl rounded-lg" src={foto1} alt="foto1" />
         </div>
         <div className="flex flex-col justify-center content-center m-10 gap-24">
