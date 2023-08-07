@@ -32,7 +32,10 @@ function CommentForm() {
     <div className="flex flex-col gap-2">
       <form onSubmit={handleSubmit(onCommentSubmit)}>
         <div className="max-w-md" id="textarea">
-          <div className="mb-2 block">
+        <h1 className="py-5 text-2xl font-bold border-[#636566] text-[#636566] text-center">
+            Deixe sua mensagem para o casal
+          </h1>
+          <div className="mb-1 block">
             <Label htmlFor="comment" value="Sua mensagem" />
           </div>
           <Textarea
@@ -50,7 +53,7 @@ function CommentForm() {
           />
         </div>
         <div className="max-w-md">
-          <div className="mb-2 block">
+          <div className="mt-5 mb-1 block">
             <Label htmlFor="nome" value="Seu nome" />
           </div>
           <TextInput
@@ -69,7 +72,7 @@ function CommentForm() {
           />
         </div>
         <div className="max-w-md">
-          <div className="mb-2 block">
+          <div className="mt-5 mb-1 block">
             <Label htmlFor="email4" value="Seu email" />
           </div>
           <TextInput
@@ -87,7 +90,7 @@ function CommentForm() {
             })}
           />
         </div>
-        <Button className="w-full mt-6" type="submit" color="light">
+        <Button className="w-full mt-8" type="submit" color="light">
           Enviar
         </Button>
       </form>

@@ -5,7 +5,7 @@ import flores from "../assets/flores.webp";
 import CountdownTimer from "./CountdownTimer";
 
 function Navbar() {
-  let countDownDate = new Date("Oct 23, 2023 16:50:00").getTime();
+  let countDownDate = new Date("Oct 21, 2023 16:50:00").getTime();
   let now = new Date().getTime();
   let timeleft = countDownDate - now;
 
@@ -29,9 +29,8 @@ function Navbar() {
       </a>
 
       <h1 className="py-4 mb-5 text-xl font-bold text-[#636566] text-center flex justify-center gap-5 tracking-widest">
-        OUTUBRO 21, 2023
-        <i className="fa-solid fa-circle text-xs self-center "></i> SALÃO
-        ESPORTE FINO
+        21 DE OUTUBRO DE 2023
+        <i className="fa-solid fa-circle text-xs self-center "></i> NOVA LIMA - MG
       </h1>
       <div className="text-[#636566] tracking-widest m-3">
         <CountdownTimer targetDate={weedingDay} />
