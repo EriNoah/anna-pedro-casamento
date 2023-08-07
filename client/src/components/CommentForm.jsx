@@ -1,16 +1,26 @@
-import { Label, Textarea, Button } from "flowbite-react";
+import { Label, Textarea, Button, Alert } from "flowbite-react";
 import { TextInput } from "flowbite-react";
 import { HiMail, HiUser } from "react-icons/hi";
 import { useForm } from "react-hook-form";
 import commentService from "../services/comments";
+import { useState } from "react";
 
 function CommentForm() {
-  const { register, handleSubmit, setError, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+    reset,
+  } = useForm({
     mode: "onBlur",
   });
 
+  const [serverError, setServerError] = useState(undefined);
+
   const onCommentSubmit = async (comment) => {
     try {
+      setServerError(undefined);
       console.debug("Registering...");
       console.log(comment);
       comment = await commentService.create(comment);
@@ -23,7 +33,7 @@ function CommentForm() {
           setError(inputName, { message: errors[inputName] })
         );
       } else {
-        console.error(error);
+        setServerError(error.message);
       }
     }
   };
@@ -31,6 +41,14 @@ function CommentForm() {
   return (
     <div className="flex flex-col gap-2">
       <form onSubmit={handleSubmit(onCommentSubmit)}>
+        {serverError && (
+          <Alert color="failure" className="mt-20  h-30">
+            <span className="text-center">
+              <span className="text-2xl ">Info alert!</span>{" "}
+              <div className="text-2xl ">{serverError}.</div>
+            </span>
+          </Alert>
+        )}
         <div className="max-w-md" id="textarea">
         <h1 className="py-5 text-2xl font-bold border-[#636566] text-[#636566] text-center">
             Deixe sua mensagem para o casal
@@ -44,13 +62,18 @@ function CommentForm() {
             required
             rows={4}
             {...register("text", {
-              required: "Text is required",
+              required: "O mensagem do comentário é obrigatório",
               minLength: {
                 value: 4,
-                message: "Text needs at least 4 characters",
+                message: "O mensagem precisa de pelo menos 4 caracteres",
               },
             })}
           />
+          {errors.text && (
+            <div className="text-red-400  text-base">
+              {errors.text?.message}
+            </div>
+          )}
         </div>
         <div className="max-w-md">
           <div className="mt-5 mb-1 block">
@@ -63,16 +86,21 @@ function CommentForm() {
             required
             type="text"
             {...register("author", {
-              required: "Name is required",
+              required: "Nome é obrigatório",
               minLength: {
-                value: 4,
-                message: "User name needs at least 4 characters",
+                value: 3,
+                message: "O nome precisa de pelo menos 3 caracteres",
               },
             })}
           />
+          {errors.author && (
+            <div className="text-red-400 text-base">
+              {errors.author?.message}
+            </div>
+          )}
         </div>
         <div className="max-w-md">
-          <div className="mt-5 mb-1 block">
+          <div className="mt-5 mb-2 block">
             <Label htmlFor="email4" value="Seu email" />
           </div>
           <TextInput
@@ -82,13 +110,18 @@ function CommentForm() {
             required
             type="email"
             {...register("email", {
-              required: "Email is required",
+              required: "O email é obrigatório",
               pattern: {
                 value: /^\S+@\S+\.\S+$/,
-                message: "User email must be valid",
+                message: "O email do usuário deve ser válido",
               },
             })}
           />
+          {errors.email && (
+            <div className="text-red-400 text-base">
+              {errors.email?.message}
+            </div>
+          )}
         </div>
         <Button className="w-full mt-8" type="submit" color="light">
           Enviar

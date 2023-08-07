@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema({
   text: {
     type: String,
-    required: "Comment text is required",
+    required: "O mensagem do comentário é obrigatório",
   },
   confirm: {
     type: Boolean,
@@ -12,14 +12,14 @@ const commentSchema = new Schema({
   },
   author: {
     type: String,
-    required: "Author is required",
-    minlength: [3, "Author needs at least 2 chars"],
+    required: "Nome é obrigatório",
+    minlength: [3, "O nome precisa de pelo menos 3 caracteres"],
     unique: true
   },
   email: {
     type: String,
-    required: "Email is required",
-    match: [/^\S+@\S+\.\S+$/, "User email must be valid"],
+    required: "O e-mail é obrigatório",
+    match: [/^\S+@\S+\.\S+$/, "O e-mail do usuário deve ser válido"],
     unique: true
   }
 },
