@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <div className=" bg-white text-white flex flex-col  text-center max-w-screen-xl  flex-wrap items-center justify-between mx-auto p-4">
       <img
-        className="hidden sm:block md:w-auto sm:text-center "
+        className="hidden sm:block md:w-auto sm:text-center"
         src={flores}
         alt="flores"
       />
@@ -28,11 +28,11 @@ function Navbar() {
         </h1>
       </a>
 
-      <h1 className="py-4 mb-5 text-xl font-bold text-[#636566] text-center flex justify-center gap-5 tracking-widest">
+      <h1 className="py-4 text-xl font-bold text-[#636566] text-center flex justify-center gap-5 tracking-widest">
         21 DE OUTUBRO DE 2023
         <i className="fa-solid fa-circle text-xs self-center "></i> NOVA LIMA - MG
       </h1>
-      <div className="text-[#636566] tracking-widest m-3">
+      <div className="text-[#636566] mb-10">
         <CountdownTimer targetDate={weedingDay} />
       </div>
       <div className="w-full md:block md:w-auto" id="navbar-default">
