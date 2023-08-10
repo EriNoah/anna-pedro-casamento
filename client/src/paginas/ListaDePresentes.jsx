@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import houseConstructionService from '../services/houseConstruction';
 import {getHouseImage} from "../utils/houseUtils"
 
 function ListaDePresentes() {
-  const [houseState, setHouseState] = useState(0);
-  const houseImage = getHouseImage(houseState);
+  const [houseState, setHouseState] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      await houseConstructionService
+      .getPieces()
+      .then((res) => setHouseState(res.data[0]))
+      .catch((err) => console.log(err));
+    }
+    if(Object.keys(houseState.length === 0)) {
+      getData()
+    }
+  
+  }, [houseState.length]);
 
   const handleClick = () => {
     try {
       houseConstructionService.addPiece({
-        soldPieces: 0,
+        soldPieces: 10,
         remainingPieces: 100,
         totalPieces: 100,
       });
@@ -20,8 +33,8 @@ function ListaDePresentes() {
 
   return (
     <div>
-      {houseState > 0 && (
-        <img src={houseImage} alt={"casa"} />
+      {houseState.soldPieces > 0 && (
+        <img src={getHouseImage(houseState.soldPieces)} alt={"casa"} />
       )}
         <button onClick={handleClick}>Submit</button>
         <h1>Ajude-nos a construir nossa casa!</h1>

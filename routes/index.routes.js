@@ -8,6 +8,6 @@ router.get("/comments", comments.list);
 router.post("/comments", comments.create);
 
 router.get("/house-construction", houseConstruction.list);
-router.post("/house-construction", houseConstruction.create);
+router.put("/house-construction", houseConstruction.create);
 
 module.exports = router;

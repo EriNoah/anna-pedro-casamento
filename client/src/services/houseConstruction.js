@@ -1,7 +1,7 @@
 import http from "./base-api/base-api";
 
 const addPiece = (data) =>
-  http.post("/house-construction", data, {
+  http.put("/house-construction", data, {
     headers: { "Access-Control-Allow-Origin": "*" },
   });
 const getPieces = () =>
