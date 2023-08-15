@@ -13,10 +13,25 @@ module.exports.sendConfirmationEmail = (comment) => {
     .sendMail({
       from: "Anna & Pedro <ericaironchack@gmail.com>",
       to: comment.email,
-      subject: "Comment to approve",
+      subject: "Comentário enviado com sucesso",
       html: `
         <h1>Thank you for leaving a comment</h1>
-        <p>We will review it and it will be posted as soon as possible!</p>
+        <p>Seu comentário será revisado e, caso aprovado, será disponibilizado o mais breve possível.</p>
+      `,
+    })
+    .then((info) => console.log(info))
+    .catch((error) => console.log(error));
+};
+
+module.exports.sendNewCommentEmail = () => {
+  transporter
+    .sendMail({
+      from: "Anna & Pedro <ericaironchack@gmail.com>",
+      to: "alnwolff@gmail.com",
+      subject: "Comment to approve",
+      html: `
+        <h1>Nuevo comentario!</h1>
+        <p>Hay un nuevo comentario pendiente de aprobacion</p>
       `,
     })
     .then((info) => console.log(info))

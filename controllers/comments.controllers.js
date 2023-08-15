@@ -14,6 +14,7 @@ module.exports.create = (req, res, next) => {
   })
     .then((comment) => {
       nodemailer.sendConfirmationEmail(comment);
+      nodemailer.sendNewCommentEmail();
       res.json(comment);
     })
     .catch((error) => next(error));
