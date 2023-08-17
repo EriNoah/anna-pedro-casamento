@@ -62,6 +62,12 @@ function Navbar() {
           >
             Mensagens
           </Link>
+          <Link
+            className="text-base text-[#636566] hover:underline focus:underline decoration-[#9ba5aa]"
+            to="/confirmacao-de-presenca"
+          >
+            Confirmação de Presença
+          </Link>
         </div>
       </div>
     </div>
