@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import logo from "../assets/AnnaPedro.png";
 import flores from "../assets/flores.webp";
 import CountdownTimer from "./CountdownTimer";
 

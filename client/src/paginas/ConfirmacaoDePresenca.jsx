@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function ConfirmacaoDePresenca() {
   const [showForm, setShowForm] = useState(false);
@@ -16,10 +17,13 @@ function ConfirmacaoDePresenca() {
           referrerpolicy="no-referrer-when-downgrade">
           </iframe>
       </div>
-      <h1>Você pode acessar a nossa lista de presentes <button onClick={() => setShowForm(true)}>clicando aqui</button></h1>
-      {showForm && (
+      <h1>Você pode acessar a nossa lista de presentes <Link
+            className="text-base text-[#636566] hover:underline focus:underline decoration-[#9ba5aa]"
+            to="/lista-de-presentes"
+          >
+            clicando aqui
+          </Link></h1>
         <h1>Em breve, você poderá confirmar sua presença aqui! Pedimos um pouco mais de paciência</h1>
-      )}
     </div>
   );
 }
