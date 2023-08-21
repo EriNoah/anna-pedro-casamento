@@ -42,19 +42,38 @@ function ListaDePresentes() {
         poder nos divertir muito nesse dia tão especial. Amamos vocês Anna e
         Pedro
       </div>
-      <div className="h-[300px] md:max-w-[700px] md:h-[600px]  flex mx-2 background">
+      <div
+        div
+        className="w-[340px] h-[306px] md:w-[680px] md:h-[612px] flex justify-start mx-2 background"
+      >
         <div className="self-end">
-          {houseState.soldPieces > 0 && (
-            <img src={getHouseImage(houseState.soldPieces)} alt={"casa"} />
+          {houseState.soldPieces > 0 && houseState.soldPieces <= 10 && (
+            <img
+              className="max-h-[42px] md:max-h-full"
+              src={getHouseImage(houseState.soldPieces)}
+              alt={"casa"}
+            />
+          )}
+          {houseState.soldPieces > 10 && (
+            <img
+              className="md:max-h-full"
+              src={getHouseImage(houseState.soldPieces)}
+              alt={"casa"}
+            />
           )}
         </div>
       </div>
-      <div>
-        Wanna colaborate with our dream? Please click in the image to be
-        redirect to our apoia.se's page!
+      <div className="text-[#636566] tracking-wide text-sm md:text-[20px] text-center font my-7">
+        Quer colaborar com nosso sonho? Clique na imagem para ser redirecionado
+        para a página do apoia.se!
       </div>
-      <a href="https://apoia.se/annaepedro" target="_blank" rel="noreferrer">
-        <img src={apoiase} className="w-4/12" alt="apoiase img" />
+      <a
+        className="flex justify-center"
+        href="https://apoia.se/annaepedro"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={apoiase} className="w-6/12" alt="apoiase img" />
       </a>
     </div>
   );

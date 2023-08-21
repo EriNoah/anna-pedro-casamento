@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <div className=" bg-white text-white flex flex-col  text-center max-w-screen-xl  flex-wrap items-center justify-between mx-auto p-4">
       <img
-        className=" sm:block md:w-auto sm:text-center "
+        className="sm:block md:w-auto sm:text-center "
         src={flores}
         alt="flores"
       />
