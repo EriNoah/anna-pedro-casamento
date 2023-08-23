@@ -14,13 +14,11 @@ const commentSchema = new Schema({
     type: String,
     required: "Nome é obrigatório",
     minlength: [3, "O nome precisa de pelo menos 3 caracteres"],
-    unique: true
   },
   email: {
     type: String,
     required: "O e-mail é obrigatório",
     match: [/^\S+@\S+\.\S+$/, "O e-mail do usuário deve ser válido"],
-    unique: true
   }
 },
   {
