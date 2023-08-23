@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.e36d113c.css",
-    "main.js": "/static/js/main.77a7bd5f.js",
+    "main.css": "/static/css/main.18e8cdd2.css",
+    "main.js": "/static/js/main.d62a795f.js",
     "static/js/787.5649b3cb.chunk.js": "/static/js/787.5649b3cb.chunk.js",
     "static/media/apoiase.png": "/static/media/apoiase.8abc21107b5e45220b62.png",
     "static/media/foto_home.jpg": "/static/media/foto_home.c35ef206593454d34b49.jpg",
     "static/media/nossa_historia_1.jpg": "/static/media/nossa_historia_1.bff194aa5efe352839a1.jpg",
     "static/media/nossa_historia_2.jpg": "/static/media/nossa_historia_2.367020c9f8c25bd4814e.jpg",
+    "static/media/house_complete_bw.png": "/static/media/house_complete_bw.aceb2b8f7bd9a6724feb.png",
     "static/media/flores.webp": "/static/media/flores.89148f6ca2ee34c460db.webp",
     "static/media/nossa_historia_3.jpg": "/static/media/nossa_historia_3.b0777e6ebc7222a443ac.jpg",
     "static/media/house_88.png": "/static/media/house_88.6c66d701e7be18a872e6.png",
@@ -89,12 +90,12 @@
     "static/media/house_13.png": "/static/media/house_13.5534e64d8af82d58e72f.png",
     "static/media/house_12.png": "/static/media/house_12.4ba3045324a951fd8909.png",
     "index.html": "/index.html",
-    "main.e36d113c.css.map": "/static/css/main.e36d113c.css.map",
-    "main.77a7bd5f.js.map": "/static/js/main.77a7bd5f.js.map",
+    "main.18e8cdd2.css.map": "/static/css/main.18e8cdd2.css.map",
+    "main.d62a795f.js.map": "/static/js/main.d62a795f.js.map",
     "787.5649b3cb.chunk.js.map": "/static/js/787.5649b3cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e36d113c.css",
-    "static/js/main.77a7bd5f.js"
+    "static/css/main.18e8cdd2.css",
+    "static/js/main.d62a795f.js"
   ]
 }
