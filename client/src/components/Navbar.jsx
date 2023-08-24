@@ -15,19 +15,17 @@ function Navbar() {
   const weedingDay = now + weedingDateInMinutes;
 
   return (
-    <div className=" bg-white text-white flex flex-col  text-center max-w-screen-xl  flex-wrap items-center justify-between mx-auto p-4">
-      <img
-        className="sm:block md:w-auto sm:text-center "
-        src={flores}
-        alt="flores"
-      />
-      <a href="/">
-        <h1 className="uppercase text-[#636566] tracking-wide text-4xl md:text-[55px] font ">
-          Anna & Pedro
-        </h1>
-      </a>
+    <div className=" bg-white text-white flex flex-col  text-center max-w-screen-xl  flex-wrap items-center justify-between mx-auto ">
+      <div className="text-center md:relative">
+        <img className="sm:block md:w-auto  " src={flores} alt="flores" />
+        <a href="/">
+          <h1 className="uppercase md:absolute md:top-[73%] md:left-[32%] text-[#636566] tracking-wide text-4xl md:text-[55px] font ">
+            Anna & Pedro
+          </h1>
+        </a>
+      </div>
 
-      <h1 className="py-4 mb-5 text-base md:text-xl font-bold text-[#636566] text-center flex justify-center gap-5 tracking-widest">
+      <h1 className=" mb-5 text-base md:text-xl font-bold text-[#636566] text-center flex justify-center gap-5 tracking-widest">
         21 DE OUTUBRO DE 2023
         <i className="fa-solid fa-circle text-xs self-center "></i>
         NOVA LIMA - MG

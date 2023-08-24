@@ -63,7 +63,15 @@ function ListaDePresentes() {
           )}
         </div>
       </div>
-      <div className="text-[#636566] tracking-wide text-sm md:text-[20px] text-center font my-7">
+
+      <div
+        class="p-4 mx-2 my-5 text-sm text-center md:text-lg text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400"
+        role="alert"
+      >
+        <i
+          className="fa-solid fa-house-chimney-window mx-2"
+          style={{ color: "#24703f" }}
+        />
         Quer colaborar com nosso sonho? Clique na imagem para ser redirecionado
         para a página do apoia.se!
       </div>
