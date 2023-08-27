@@ -47,15 +47,15 @@ module.exports.sendInvitationUpdated = (updatedGuests, email) => {
       html: `
         <h1>Obrigado por confirmar a sua presença no nosso casamento!</h1>
         <p>Abaixo você pode conferir os nomes dos convidados confirmados:
-
+      
         ${updatedGuests.map((guest) => `<li>${guest}</li>`).join("")}
 
-        Caso haja algum equívoco na lista acima, favor enviar um email para _annaluisabhz14@gmail.com_ solicitando a correção.
-        
-        Aproveitamos essa oportunidade para divulgar também nossa <link>lista de presentes</link para a pagina lista de presente>. Ajudaria muito a darmos o nosso próximo passo.
-        
+        Caso haja algum equívoco na lista acima, favor enviar um email para <a href="mailto:annaluisabhz14@gmail.com">annaluisabhz14@gmail.com</a> solicitando a correção.
+        <br/><br/>
+        Aproveitamos essa oportunidade para divulgar também nossa <a href="https://www.annaepedro.site/lista-de-presentes">lista de presentes</a>. Ajudaria muito a darmos o nosso próximo passo.
+        <br/><br/>
         Muito obrigado e aguardamos vocês para celebrar nossa união!
-        
+        <br/><br/>
         Anna Luisa e Pedro</p>
       `,
     })
@@ -67,7 +67,7 @@ module.exports.sendNewConfirmation = (updatedGuests) => {
   transporter
     .sendMail({
       from: "Anna & Pedro <ericaironchack@gmail.com>",
-      to: "alnwolff@gmail.com",
+      to: "annaluisabhz14@gmail.com",
       subject: "Confirmação de convidados",
       html: `
         <h1>Nova confirmação de convidados para o casamento:</h1>
