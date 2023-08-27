@@ -1,33 +1,106 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Label, Button, Alert } from "flowbite-react";
+import { TextInput } from "flowbite-react";
+import invitationsService from "../services/invitations";
+import UpdateInvitationForm from "../components/UpdateInvitationForm";
+import { formatName } from "../utils/utils";
 
 function ConfirmacaoDePresenca() {
-  const [showForm, setShowForm] = useState(false);
+  const [invitation, setInvitation] = useState(undefined);
+  const [serverError, setServerError] = useState(undefined);
+  const [showInvitationSearch, setShowInvitationSearch] = useState(true);
+
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  const onNameSubmit = async (values) => {
+    const formattedName = formatName(values.name);
+
+    try {
+      setServerError(undefined);
+      const res = await invitationsService.getInvitationByName(formattedName);
+      setInvitation(res?.data[0]);
+      reset();
+      setShowInvitationSearch(false);
+    } catch (error) {
+      const errorMessage = error.response.data.message ?? error.message;
+      setServerError(errorMessage);
+    }
+  };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div>
-        <iframe
-          className="my-7 rounded-lg border md:w-[600px] md:h-[250px]"
-          title="map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.2310375069213!2d-43.926694354278496!3d-19.971177808082537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa698155db46fdf%3A0x4cc83f2954becc1f!2sAv.%20Dr.%20Marco%20Paulo%20Simon%20Jardim%2C%20857%20-%20Jardim%20da%20Torre%2C%20Nova%20Lima%20-%20MG%2C%2034000-000%2C%20Brazil!5e0!3m2!1sen!2ses!4v1692296732131!5m2!1sen!2ses"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-      <div
-        class="p-4 mx-2 my-5 text-sm text-center md:text-lg text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-blue-400"
-        role="alert"
-      >
-        <i className="fa-solid fa-wrench mx-2" style={{ color: "#24703f" }} />
-        Em breve, você poderá confirmar sua presença aqui! Pedimos um pouco mais
-        de paciência
-      </div>
+    <div className="flex flex-col justify-center items-center mt-4">
+      {serverError && (
+        <Alert
+          color="failure"
+          className="mx-2 my-5 text-sm text-center md:text-lg text-red-800 rounded-lg dark:bg-gray-800 dark:text-blue-400"
+        >
+          <span>
+            <i
+              className="fa-solid fa-triangle-exclamation mx-2"
+              style={{ color: "#d03f2f" }}
+            />
+            Algo deu errado:
+          </span>
+          <div>{serverError}</div>
+        </Alert>
+      )}
+      {showInvitationSearch && (
+        <>
+          <h1 className="py-3 text-lg font-bold border-[#636566] text-[#636566] text-center">
+            Por favor, confirme sua presença no formulário a seguir:
+          </h1>
+          <form
+            onSubmit={handleSubmit(onNameSubmit)}
+            className="flex flex-col justify-start items-center min-h-[300px]"
+          >
+            <div>
+              <div className="mt-5 mb-1 block">
+                <Label
+                  htmlFor="name"
+                  value="Nome da pessoa que está se referindo ao convite"
+                />
+              </div>
+              <TextInput
+                id="name"
+                placeholder="Nome da pessoa de referência..."
+                required
+                type="text"
+                {...register("name", {
+                  required: "Nome é obrigatório",
+                  minLength: {
+                    value: 3,
+                    message: "O nome precisa de pelo menos 3 caracteres",
+                  },
+                })}
+              />
+              {errors.name && (
+                <div className="text-red-400 text-base">
+                  {errors.name?.message}
+                </div>
+              )}
+            </div>
+            <Button className="w-full mt-8" type="submit" color="light">
+              Buscar
+            </Button>
+          </form>
+        </>
+      )}
+
+      {invitation && <UpdateInvitationForm invitation={invitation} />}
 
       <Link
         to="/lista-de-presentes"
-        class="mb-5 mx-2 inline-flex items-center justify-center p-5 text-sm text-center md:text-lg font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+        class="my-5 mx-2 inline-flex items-center justify-center p-5 text-sm text-center md:text-lg font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
       >
         <span class="w-full">
           Você pode acessar a nossa lista de presentes clicando aqui
