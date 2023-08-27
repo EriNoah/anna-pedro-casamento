@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Label, Button, Alert } from "flowbite-react";
 import { TextInput } from "flowbite-react";
-import invitationsService from '../services/invitations';
+import invitationsService from "../services/invitations";
 import UpdateInvitationForm from "../components/UpdateInvitationForm";
 import { formatName } from "../utils/utils";
 
@@ -11,22 +11,24 @@ function ConfirmacaoDePresenca() {
   const [invitation, setInvitation] = useState(undefined);
   const [serverError, setServerError] = useState(undefined);
   const [showInvitationSearch, setShowInvitationSearch] = useState(true);
+
+  
   const {
-      register,
-      handleSubmit,
-      formState: { errors },
-      reset,
-    } = useForm({
-      mode: "onBlur",
-    });
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    mode: "onBlur",
+  });
 
   const onNameSubmit = async (values) => {
-    const formattedName = formatName(values.name)
+    const formattedName = formatName(values.name);
 
     try {
       setServerError(undefined);
       const res = await invitationsService.getInvitationByName(formattedName);
-      setInvitation(res?.data[0])
+      setInvitation(res?.data[0]);
       reset();
       setShowInvitationSearch(false);
     } catch (error) {
@@ -36,55 +38,37 @@ function ConfirmacaoDePresenca() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div
-        class="p-4 mx-2 my-10 text-sm text-center md:text-lg text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-blue-400"
-        role="alert"
-      >
-        <i className="fa-solid fa-wrench mx-2" style={{ color: "#24703f" }} />
-        Em breve, você poderá confirmar sua presença aqui! Pedimos um pouco mais
-        de paciência
-      </div>
-
-      <Link
-        to="/lista-de-presentes"
-        class="mb-5 mx-2 inline-flex items-center justify-center p-5 text-sm text-center md:text-lg font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
-      >
-        <span class="w-full">
-          Você pode acessar a nossa lista de presentes clicando aqui
-        </span>
-        <svg
-          class="w-4 h-4 ml-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </Link>
-
+    <div className="flex flex-col justify-center items-center mt-4">
       {serverError && (
-          <Alert color="failure" className="mt-20  h-30">
-            <span className="text-center">
-              <span className="text-2xl ">Algo deu errado:</span>
-              <div className="text-2xl ">{serverError}.</div>
-            </span>
-          </Alert>
-        )}
-        {showInvitationSearch && (
-          <>
-            <h1 className='mt-20'>Por favor, confirme sua presença no formulário a seguir:</h1>
-            <form onSubmit={handleSubmit(onNameSubmit)}>
-            <div className="max-w-md">
+        <Alert
+          color="failure"
+          className="mx-2 my-5 text-sm text-center md:text-lg text-red-800 rounded-lg dark:bg-gray-800 dark:text-blue-400"
+        >
+          <span>
+            <i
+              className="fa-solid fa-triangle-exclamation mx-2"
+              style={{ color: "#d03f2f" }}
+            />
+            Algo deu errado:
+          </span>
+          <div>{serverError}</div>
+        </Alert>
+      )}
+      {showInvitationSearch && (
+        <>
+          <h1 className="py-3 text-lg font-bold border-[#636566] text-[#636566] text-center">
+            Por favor, confirme sua presença no formulário a seguir:
+          </h1>
+          <form
+            onSubmit={handleSubmit(onNameSubmit)}
+            className="flex flex-col justify-start items-center min-h-[300px]"
+          >
+            <div>
               <div className="mt-5 mb-1 block">
-                <Label htmlFor="name" value="Nome da pessoa que está se referindo ao convite" />
+                <Label
+                  htmlFor="name"
+                  value="Nome da pessoa que está se referindo ao convite"
+                />
               </div>
               <TextInput
                 id="name"
@@ -110,11 +94,33 @@ function ConfirmacaoDePresenca() {
             </Button>
           </form>
         </>
-        )}
+      )}
 
-        {invitation && (
-          <UpdateInvitationForm invitation={invitation} />
-        )}
+      {invitation && <UpdateInvitationForm invitation={invitation} />}
+
+      <Link
+        to="/lista-de-presentes"
+        class="my-5 mx-2 inline-flex items-center justify-center p-5 text-sm text-center md:text-lg font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+      >
+        <span class="w-full">
+          Você pode acessar a nossa lista de presentes clicando aqui
+        </span>
+        <svg
+          class="w-4 h-4 ml-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+        </svg>
+      </Link>
     </div>
   );
 }
