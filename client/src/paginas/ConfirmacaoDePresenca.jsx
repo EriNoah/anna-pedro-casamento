@@ -56,7 +56,7 @@ function ConfirmacaoDePresenca() {
       )}
       {showInvitationSearch && (
         <>
-          <h1 className="py-3 text-lg font-bold border-[#636566] text-[#636566] text-center">
+          <h1 className="p-3 text-lg font-bold border-[#636566] text-[#636566] text-center">
             Por favor, confirme sua presença no formulário a seguir:
           </h1>
           <form
