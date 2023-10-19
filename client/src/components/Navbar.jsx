@@ -12,7 +12,7 @@ function Navbar() {
 
   const weedingDateInMinutes = days * 24 * 60 * 60 * 1000;
 
-  const weedingDay = now ;
+  const weedingDay = now + weedingDateInMinutes;
 
   return (
     <div className=" bg-white text-white flex flex-col  text-center max-w-screen-xl  flex-wrap items-center justify-between mx-auto ">
