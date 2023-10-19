@@ -4,8 +4,8 @@ import { useCountdown } from "../hooks/useCountdown";
 
 const ExpiredNotice = () => {
   return (
-    <div className="expired-notice">
-      <span>Dia Do Casamento!!</span>
+    <div className="uppercase font tracking-wider text-4xl">
+      <span>É Hoje!!!</span>
     </div>
   );
 };
