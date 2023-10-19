@@ -17,7 +17,7 @@ html {
   height: 250px;
 } */
 
-.expired-notice {
+/* .expired-notice {
   text-align: center;
   padding: 2rem;
   border: 1px solid #ebebeb;
@@ -28,12 +28,12 @@ html {
 .expired-notice > span {
   font-size: 2.5rem;
   font-weight: bold;
-  color: red;
+  color: rgb(198, 173, 173);
 }
 
 .expired-notice > p {
   font-size: 1.5rem;
-}
+} */
 
 .show-counter {
   padding: 0.5rem;

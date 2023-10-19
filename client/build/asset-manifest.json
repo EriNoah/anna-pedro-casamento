@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea58de9d.css",
-    "main.js": "/static/js/main.9de0f9b2.js",
+    "main.css": "/static/css/main.a7e3ce57.css",
+    "main.js": "/static/js/main.b5c66d2a.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/apoiase.png": "/static/media/apoiase.8abc21107b5e45220b62.png",
     "static/media/foto_home.jpg": "/static/media/foto_home.c35ef206593454d34b49.jpg",
@@ -12,12 +12,12 @@
     "static/media/flores.webp": "/static/media/flores.89148f6ca2ee34c460db.webp",
     "static/media/nossa_historia_3.jpg": "/static/media/nossa_historia_3.b0777e6ebc7222a443ac.jpg",
     "index.html": "/index.html",
-    "main.ea58de9d.css.map": "/static/css/main.ea58de9d.css.map",
-    "main.9de0f9b2.js.map": "/static/js/main.9de0f9b2.js.map",
+    "main.a7e3ce57.css.map": "/static/css/main.a7e3ce57.css.map",
+    "main.b5c66d2a.js.map": "/static/js/main.b5c66d2a.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea58de9d.css",
-    "static/js/main.9de0f9b2.js"
+    "static/css/main.a7e3ce57.css",
+    "static/js/main.b5c66d2a.js"
   ]
 }
