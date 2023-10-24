@@ -30,9 +30,9 @@ function Navbar() {
         <i className="fa-solid fa-circle text-xs self-center "></i>
         NOVA LIMA - MG
       </h1>
-      <div className="text-[#636566] mb-10">
+      {/* <div className="text-[#636566] mb-10">
         <CountdownTimer targetDate={weedingDay} />
-      </div>
+      </div> */}
       <div className="w-full md:block md:w-auto" id="navbar-default">
         <div className="gap-4 tracking-wider font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
           <Link
